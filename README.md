@@ -41,6 +41,9 @@ filepath = "${DEVOPS_DNS_SERVER_FROMFILE||1.txt}"
 
 # 是否要监控该文件,一有修改就重新读取
 watch = "${DEVOPS_DNS_SERVER_FROMFILE_WATCH||yes}"
+
+# 间隔多久重新读取文件，默认是3s
+interval = 3
 ```
 
 ## 运行
