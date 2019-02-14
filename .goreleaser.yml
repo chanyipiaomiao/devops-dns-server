@@ -1,0 +1,32 @@
+release:
+  github:
+    owner: chanyipiaomiao
+    name: devops-dns-server
+  name_template: '{{.Tag}}'
+  draft: true
+builds:
+  - main: main.go
+    binary: devops-dns-server
+    goos:
+      - windows
+      - darwin
+      - linux
+    goarch:
+      - amd64
+      - 386
+    env:
+      - CGO_ENABLED=0
+archive:
+  format: tar.gz
+  wrap_in_directory: true
+  replacements:
+    amd64: 64-bit
+    darwin: macos
+    linux: linux
+  files:
+    - README.md
+    - app.conf
+    - hosts
+  format_overrides:
+    - goos: windows
+      format: zip
