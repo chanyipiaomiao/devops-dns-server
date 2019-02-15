@@ -37,13 +37,23 @@ url = "${DEVOPS_DNS_SERVER_FROMAPI_URL||http://192.168.2.116:30080/host/findIPBy
 
 [fromFile]
 # 文件格式必须要和/etc/hosts格式一样
-filepath = "${DEVOPS_DNS_SERVER_FROMFILE||1.txt}"
+filepath = "${DEVOPS_DNS_SERVER_FROMFILE||hosts}"
 
 # 是否要监控该文件,一旦启用，就默认按照下面的时间间隔进行读取
 watch = "${DEVOPS_DNS_SERVER_FROMFILE_WATCH||yes}"
 
 # 间隔多久重新读取文件，默认是3s
 interval = 3
+```
+
+## 解析文件
+
+默认是当前目录下的hosts文件, 也就是/etc/hosts文件的格式
+
+```bash
+1.1.1.1 a.com
+2.2.2.2 b.com
+3.3.3.3 hostname
 ```
 
 ## 运行
