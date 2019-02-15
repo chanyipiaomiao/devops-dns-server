@@ -27,7 +27,7 @@ nameserver = "${DEVOPS_DNS_SERVER_NAMESERVER||8.8.8.8:53}"
 order = "${DEVOPS_DNS_SERVER_ORDER||fromFile}"
 
 [fromAPI]
-# api的url地址, 返回的json数据格式如下:
+# GET api的url地址, 返回的json数据格式如下:
 # 必须包含data字段
 #{
 #    "data": "ip地址"
@@ -39,7 +39,7 @@ url = "${DEVOPS_DNS_SERVER_FROMAPI_URL||http://192.168.2.116:30080/host/findIPBy
 # 文件格式必须要和/etc/hosts格式一样
 filepath = "${DEVOPS_DNS_SERVER_FROMFILE||1.txt}"
 
-# 是否要监控该文件,一有修改就重新读取
+# 是否要监控该文件,一旦启用，就默认按照下面的时间间隔进行读取
 watch = "${DEVOPS_DNS_SERVER_FROMFILE_WATCH||yes}"
 
 # 间隔多久重新读取文件，默认是3s
