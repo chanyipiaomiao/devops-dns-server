@@ -46,7 +46,26 @@ watch = "${DEVOPS_DNS_SERVER_FROMFILE_WATCH||yes}"
 interval = 3
 ```
 
-## 解析文件
+## 解析动作
+
+1. 从API获取IP
+2. 从文件获取IP
+
+任选一个或者2个都使用，配置好寻找顺序即可
+
+## 从API获取IP
+
+在app.conf配置文件配置CMDB API，程序会以GET方式访问API地址，结果json中必须要包含 data 字段
+
+```bash
+{
+    "data": "ip地址"
+    ...
+}
+```
+
+## 从文件获取IP
+
 
 默认是当前目录下的hosts文件, 也就是/etc/hosts文件的格式
 
