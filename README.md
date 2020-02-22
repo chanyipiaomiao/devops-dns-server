@@ -33,7 +33,7 @@ order = "${DEVOPS_DNS_SERVER_ORDER||fromFile}"
 #    "data": "ip地址"
 #    ...
 #}
-url = "${DEVOPS_DNS_SERVER_FROMAPI_URL||http://192.168.2.116:30080/host/findIPByName?TOKEN=vZQKuspMoUdxDVe}"
+url = "${DEVOPS_DNS_SERVER_FROMAPI_URL||http://192.168.2.116:30080/host/findIPByName?name=hostname"
 
 [fromFile]
 # 文件格式必须要和/etc/hosts格式一样
